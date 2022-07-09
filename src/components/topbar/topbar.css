@@ -56,10 +56,11 @@
   color: white;
 }
 
-.topbarLink {
+.topbarLink{
   margin-right: 10px;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
+
 }
 
 .topbarIcons {
@@ -93,4 +94,8 @@
   border-radius: 50%;
   object-fit: cover;
   cursor: pointer;
+}
+.link-text{
+  color: white;
+  text-decoration: none;
 }

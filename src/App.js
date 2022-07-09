@@ -7,18 +7,18 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 function App() {
   return(
     <div>
-      <Router>
+      {/* <Router> */}
         <Routes>
           <Route exact path='/home' element={<Home/>}/>
           <Route exact path='/login' element={<Login/>}/>
           <Route exact path='/profile' element={<Profile/>}/>
           <Route exact path='/register' element={<Register/>}/>
         </Routes>
-      </Router>
+      {/* </Router> */}
 
-      <Login/>
+      {/* <Login/> */}
       {/* <Register/> */}
-       <Home/>
+       {/* <Home/> */}
       {/* <Profile/> */}
     </div>
   )

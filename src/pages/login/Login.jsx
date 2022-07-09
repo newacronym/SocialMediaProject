@@ -1,6 +1,34 @@
 import "./login.css";
+import axios from "axios";
+import { useState } from "react";
+import {BrowserRouter as Router ,Link,useNavigate} from 'react-router-dom';
+
 
 export default function Login() {
+
+const [userName,setUserName]=useState("");
+const [password,setPassword]=useState("");
+const [isLoggedIn,setIsLoggedIn]=useState(false);
+
+const navigate = useNavigate();
+
+const handleLogin=()=>{
+  axios.get('http://localhost:8080/users/auth/'+userName+'/'+password)
+  .then(function(response){
+    console.log(response.data);
+    setIsLoggedIn(response.data);
+  })  
+
+  if(isLoggedIn==true){
+    // console.log('Redirecting..')
+    // return <Redirect to='/home' />
+    navigate("/home", { replace: true });
+  }
+  else{
+    alert ("Wrong login Details, Enter again");  
+  }
+}
+
   return (
     <div className="login">
       <div className="loginWrapper">
@@ -12,13 +40,15 @@ export default function Login() {
         </div>
         <div className="loginRight">
           <div className="loginBox">
-            <input placeholder="Email" className="loginInput" />
-            <input placeholder="Password" className="loginInput" />
-            <button className="loginButton">Log In</button>
+            <input placeholder="UserName" className="loginInput" onChange={(event)=>{setUserName(event.currentTarget.value);}} />
+            <input placeholder="Password" className="loginInput" onChange={(event)=>{setPassword(event.currentTarget.value);}}/>
+            <button className="loginButton" onClick={handleLogin}>Log In</button>
             <span className="loginForgot">Forgot Password?</span>
-            <button className="loginRegisterButton">
+            
+            <Link to="/register"><button className="loginRegisterButton">
               Create a New Account
-            </button>
+            </button></Link>
+            
           </div>
         </div>
       </div>

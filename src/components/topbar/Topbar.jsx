@@ -21,7 +21,9 @@ export default function Topbar() {
         <div className="topbarLinks">
         {/* <Link to='/home'> HomePage </Link> */}
           <span className="topbarLink"></span>
-           <span href="/profile" className="topbarLink">Profile</span>
+          <Link to="/home" className="link-text"><span className="topbarLink">Home</span></Link>
+          <Link to="/profile" className="link-text"><span className="topbarLink">Profile</span></Link>
+           
         </div>
         <div className="topbarIcons">
           <div className="topbarIconItem">
@@ -38,6 +40,7 @@ export default function Topbar() {
           </div>
         </div>
         <img src="/assets/person/1.jpeg" alt="" className="topbarImg"/>
+        <Link to="/login" className="link-text">Sign Out</Link>
       </div>
     </div>
   );
