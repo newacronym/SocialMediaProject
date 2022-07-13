@@ -26,6 +26,8 @@ export default function Register() {
         console.log(response.status);
         console.log(response.data.token);
       });
+
+      alert ("Hey, Successfully created the Account.");
     };
 
   return (
@@ -37,7 +39,7 @@ export default function Register() {
     <div className="login">
       <div className="loginWrapper">
         <div className="loginLeft">
-          <h3 className="loginLogo">Lamasocial</h3>
+          <h3 className="loginLogo">ChatBook</h3>
           <span className="loginDesc">
             Connect with friends and the world around you on Lamasocial.
           </span>

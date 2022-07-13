@@ -16,10 +16,16 @@ const handleLogin=()=>{
   axios.get('http://localhost:8080/users/auth/'+userName+'/'+password)
   .then(function(response){
     console.log(response.data);
+
+    // setTimeout(()=>{
+    //   setIsLoggedIn(response.data);
+    // },2000);
+
     setIsLoggedIn(response.data);
   })  
 
   if(isLoggedIn==true){
+
     // console.log('Redirecting..')
     // return <Redirect to='/home' />
     navigate("/home", { replace: true });
@@ -33,9 +39,9 @@ const handleLogin=()=>{
     <div className="login">
       <div className="loginWrapper">
         <div className="loginLeft">
-          <h3 className="loginLogo">Lamasocial</h3>
+          <h3 className="loginLogo">ChatBook</h3>
           <span className="loginDesc">
-            Connect with friends and the world around you on Lamasocial.
+            Connect with friends and the world around you on ChatBook.
           </span>
         </div>
         <div className="loginRight">
